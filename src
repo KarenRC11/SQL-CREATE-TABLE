@@ -1,0 +1,39 @@
+--Primary key compuesto
+
+--WITH CONSTRAINT
+CREATE TABLE   tabla2 ( 
+campo1    char(2),                                       
+campo2    number(5),  
+campo3    varchar2(20),                                          
+campo4    number (5),                      
+CONSTRAINT keytabla2 PRIMARY KEY(campo1,campo2)                        
+);
+
+
+CREATE TABLE tabla1 ( 
+campo1    number(7)  PRIMARY KEY,  
+campo2    varchar2(5) 
+);
+
+
+--FOREIGN KEY
+
+CREATE TABLE tabla1 ( 
+campo1   number(7) PRIMARY KEY,                                          
+campo2   varchar2(5)
+);              
+
+
+CREATE TABLE   tabla2 ( 
+camp1    char(2),                                      
+camp2    number(5),
+camp3    varchar2(20),                                          
+camp4    number(5),                   
+CONSTRAINT keytabla2 PRIMARY KEY(camp1,camp2)                          
+CONSTRAINT foreignkeytabla1 FOREIGN KEY camp4                                                          
+REFERENCES tabla1(campo1)                              
+); 
+
+                                       
+
+
